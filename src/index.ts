@@ -23,7 +23,13 @@ const generateRandomTime = (hours: number[]) => {
 }
 
 const createCSVFile = (lines: string[]) => {
-  fs.writeFileSync(path.join(__dirname, "files", `${moment().format("DD-MM")}.csv`), lines.join("\n"));
+  const dirname = path.join(__dirname, "..", "files");
+
+  if (!fs.existsSync(dirname)) {
+    fs.mkdirSync(dirname);
+  }
+
+  fs.writeFileSync(path.join(dirname, `${moment().format("DD-MM")}.csv`), lines.join("\n"));
 }
 
 const generateHours = (startDate: Moment, endDate: Moment) => {

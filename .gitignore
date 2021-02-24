@@ -9,3 +9,5 @@ lib/
 out/
 
 **/*.log
+
+files/
