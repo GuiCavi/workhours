@@ -1,0 +1,11 @@
+node_modules/
+.editorconfig
+coverage/
+# stryker temp files
+.stryker-tmp
+dist/
+reports/
+lib/
+out/
+
+**/*.log
